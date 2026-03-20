@@ -23,7 +23,7 @@ const Login = () => {
   const onClickLogin = async (event) =>{
     event.preventDefault()
     const userDetails = {username,password}
-    const url = 'http://localhost:3000/api/v2/login'
+    const url = 'https://primetrade-ai-8z46.onrender.com/api/v2/login'
     const options = {
         method:'POST',
         headers: {'Content-Type': 'application/json'},
