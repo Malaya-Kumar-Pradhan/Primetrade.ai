@@ -4,6 +4,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const mysql = require('mysql2/promise')
 const app = express()
+require('dotenv').config();
 app.use(cors())
 app.use(express.json())
 let db=null
@@ -11,12 +12,15 @@ let db=null
 const intializeDBServer = async () =>{
     try{
         db = await mysql.createPool({
-        host: 'localhost',
-        user: 'root',
-        password: 'ShivRambhaktmkp@123',
-        database: 'primetrade_db',
-    });
-    app.listen(3000,()=>{
+            host: process.env.DB_HOST,
+            user: process.env.DB_USER,
+            password: process.env.DB_PASSWORD,
+            database: process.env.DB_NAME,
+            port: process.env.DB_PORT || 3306,
+            ssl: { rejectUnauthorized: false }
+        });
+        const port = process.env.PORT || 3000;
+    app.listen(port,()=>{
         console.log("Server Running at http://localhost:3000/")
     })
     }
