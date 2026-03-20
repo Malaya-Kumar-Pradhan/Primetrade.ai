@@ -15,7 +15,7 @@ const Register = () =>{
     const onClickRegister = async (event) =>{
         event.preventDefault()
         const userDetails = {name,email,gender,phoneNo,password}
-        const url = 'http://localhost:3000/api/v1/register'
+        const url = 'https://primetrade-ai-8z46.onrender.com/api/v1/register'
         const options = {
             method:'POST',
             headers:{"Content-Type":"application/json"},
