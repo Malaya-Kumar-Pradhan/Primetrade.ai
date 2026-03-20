@@ -13,7 +13,7 @@ const Dashboard = () => {
             headers: { Authorization: `Bearer ${token}` },
             method: "GET",
         };
-        const response = await fetch("http://localhost:3000/api/v1/tasks", options);
+        const response = await fetch("https://primetrade-ai-8z46.onrender.com/api/v1/tasks", options);
         if (response.ok) {
             const data = await response.json();
             setTasks(data);
@@ -31,7 +31,7 @@ const Dashboard = () => {
             },
             body: JSON.stringify({ title, description }),
         };
-        await fetch("http://localhost:3000/api/v1/tasks", options);
+        await fetch("https://primetrade-ai-8z46.onrender.com/api/v1/tasks", options);
         setTitle("");
         setDescription("");
         fetchTasks();
@@ -49,7 +49,7 @@ const Dashboard = () => {
             },
             body: JSON.stringify({})
         }
-        await fetch(`http://localhost:3000/api/v1/tasks/${id}`, options);
+        await fetch(`https://primetrade-ai-8z46.onrender.com/api/v1/tasks/${id}`, options);
         fetchTasks()
     }
 
