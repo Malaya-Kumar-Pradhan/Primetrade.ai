@@ -47,7 +47,6 @@ const Dashboard = () => {
                 "Content-Type":"application/json",
                 Authorization:`Bearer ${token}`
             },
-            body: JSON.stringify({})
         }
         await fetch(`https://primetrade-ai-8z46.onrender.com/api/v1/tasks/${id}`, options);
         fetchTasks()
