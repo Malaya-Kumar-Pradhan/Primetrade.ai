@@ -46,12 +46,12 @@ const intializeDBServer = async () =>{
         
         console.log("Database tables checked and ready!");
         const port = process.env.PORT || 3000;
-    app.listen(port,()=>{
-        console.log("Server Running at http://localhost:3000/")
-    })
+        app.listen(port,()=>{
+            console.log("Server Running")
+        })
     }
     catch(error){
-        console.log(`DB Error: ${error.message}`)
+        console.log(`Error: ${error.message}`)
         process.exit(1)
     }
 }
