@@ -19,6 +19,32 @@ const intializeDBServer = async () =>{
             port: process.env.DB_PORT || 3306,
             ssl: { rejectUnauthorized: false }
         });
+        const createUserTable = `
+            CREATE TABLE IF NOT EXISTS user (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                Name VARCHAR(255) NOT NULL,
+                Email VARCHAR(255) NOT NULL,
+                Gender VARCHAR(50),
+                PhoneNo VARCHAR(20),
+                password VARCHAR(255) NOT NULL,
+                role ENUM('user', 'admin') DEFAULT 'user'
+            );
+        `;
+        await db.query(createUserTable);
+
+        const createTasksTable = `
+            CREATE TABLE tasks (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                title VARCHAR(255) NOT NULL,
+                description TEXT,
+                status ENUM('pending', 'completed') DEFAULT 'pending',
+                user_id INT,
+                FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE
+               );
+        ';
+        await db.query(createTasksTable);
+        
+        console.log("Database tables checked and ready!");
         const port = process.env.PORT || 3000;
     app.listen(port,()=>{
         console.log("Server Running at http://localhost:3000/")
