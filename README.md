@@ -50,8 +50,8 @@ To ensure this system can handle high traffic and growing data, the following st
 # 📖 API Documentation
 You can find the Postman Collection link below to test the endpoints:
 
-[Insert link to your shared Postman Collection or public documentation here]
-
+[Postman Collection Link
+](https://malayakumarpradhan716-6986272.postman.co/workspace/916d73d8-c361-4ae5-8f02-c9cebf7f6810/collection/53372938-ce4cf25e-8811-4083-82a5-e34136dc9f3d?action=share&source=copy-link&creator=53372938)
 ---
 
 # ⚙️ How to Run Locally
