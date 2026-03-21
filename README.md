@@ -19,7 +19,7 @@ This project was developed as a technical assignment for the **Backend Developer
 
 ## 🛠️ Tech Stack
 * **Backend:** Node.js, Express.js.
-* **Database:** MySQL (Hosted on Aiven).
+* **Database:** MySQL (Hosted on TiDB).
 * **Frontend:** React.js (with React Router & Hooks).
 * **Security:** JWT, Bcrypt, CORS.
 
