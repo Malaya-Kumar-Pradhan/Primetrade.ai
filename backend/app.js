@@ -51,7 +51,7 @@ const intializeDBServer = async () =>{
         })
     }
     catch(error){
-        console.log(`Error: ${error.message}`)
+        console.log(`DB Error: ${error.message}`)
         process.exit(1)
     }
 }
